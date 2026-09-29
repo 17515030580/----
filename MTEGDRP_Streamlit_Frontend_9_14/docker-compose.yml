@@ -1,0 +1,25 @@
+services:
+  frontend:
+    build: .
+    image: oncofusion-frontend:latest
+    container_name: oncofusion-frontend
+    # 服务器重启 / 崩溃后自动拉起
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-8501}:8501"
+    environment:
+      # 部署时改这里。同机后端用容器可访问的地址：
+      #   - 后端也在这个 compose 里  -> http://backend:8000
+      #   - 后端跑在宿主机上          -> http://host.docker.internal:8000
+      #   - 后端在别的机器            -> http://<后端IP>:8000 或 https://域名
+      BACKEND_URL: "${BACKEND_URL:-http://host.docker.internal:8000}"
+      REQUEST_TIMEOUT_SECONDS: "${REQUEST_TIMEOUT_SECONDS:-600}"
+      FRONTEND_MAX_UPLOAD_MB: "${FRONTEND_MAX_UPLOAD_MB:-25}"
+      DEMO_MODE_ENABLED: "${DEMO_MODE_ENABLED:-true}"
+      APP_TITLE: "${APP_TITLE:-OncoFusion 多组学肿瘤预测系统}"
+      TZ: "Asia/Shanghai"
+    volumes:
+      # 历史记录 / 药物知识库挂出来，容器重建不丢
+      - ./frontend_data:/app/frontend_data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

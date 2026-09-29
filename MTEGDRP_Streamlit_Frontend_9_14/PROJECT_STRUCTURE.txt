@@ -1,0 +1,33 @@
+MTEGDRP_Streamlit_Frontend/
+├── streamlit_app.py                  # Streamlit 入口与侧边栏导航
+├── run_frontend.py                   # Python 启动入口
+├── app/
+│   ├── api_client.py                 # FastAPI /predict、health、下载、结构图客户端
+│   ├── cancer_types.py               # 五癌种、实际亚型标签与特征数量
+│   ├── charts.py                     # Plotly 图表
+│   ├── components.py                 # 卡片、标题、状态标签等复用组件
+│   ├── config.py                     # 环境变量配置
+│   ├── demo_data.py                  # 明确标识的演示响应
+│   ├── history_store.py              # 前端历史快照
+│   ├── state.py                      # Session State
+│   ├── styles.py                     # 绿色主题 CSS 与动画
+│   ├── utils.py                      # 数据格式化与解析辅助
+│   └── pages/
+│       ├── home.py                   # 首页
+│       ├── analysis.py               # 新建分析与三文件上传
+│       ├── results.py                # 亚型、药敏、质控、追溯、下载
+│       ├── history.py                # 历史记录
+│       ├── models.py                 # 模型和后端状态
+│       └── help.py                   # 使用说明
+├── .streamlit/config.toml            # 绿色主题与上传限制
+├── .env.example                      # 后端地址等配置
+├── sample_data/                      # CSV 格式模板
+├── frontend_data/history/            # 本地预测快照，不保存原始组学文件
+├── tests/                             # 接口、演示数据与历史存储测试
+├── scripts/check_backend.py          # 后端连通性检查
+├── requirements.txt
+├── requirements-dev.txt
+├── Dockerfile
+├── docker-compose.yml
+├── README.md
+└── PROJECT_STRUCTURE.txt

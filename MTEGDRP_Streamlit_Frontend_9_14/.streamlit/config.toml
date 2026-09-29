@@ -1,0 +1,24 @@
+[theme]
+base = "light"
+primaryColor = "#10B981"
+backgroundColor = "#F7FCF9"
+secondaryBackgroundColor = "#ECFDF5"
+textColor = "#17352D"
+font = "sans-serif"
+
+#[theme.sidebar]
+#primaryColor = "#6EE7B7"
+#backgroundColor = "#065F46"
+#secondaryBackgroundColor = "#047857"
+#textColor = "#F0FDF4"
+
+[server]
+# 单个ZIP最多包含三份各25 MB的组学CSV。
+maxUploadSize = 75
+headless = true
+enableStaticServing = true
+enableXsrfProtection = true
+enableCORS = true
+
+[browser]
+gatherUsageStats = false

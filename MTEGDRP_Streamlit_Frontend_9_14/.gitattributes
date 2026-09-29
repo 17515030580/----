@@ -1,0 +1,7 @@
+# 强制 shell 脚本用 LF 换行 —— Windows 上提交时若被转成 CRLF，
+# 在 Linux 服务器执行会报 "/usr/bin/env bash^M: bad interpreter"
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.py text eol=lf

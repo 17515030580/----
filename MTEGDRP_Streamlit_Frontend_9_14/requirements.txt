@@ -1,0 +1,9 @@
+streamlit>=1.60,<2.0
+plotly>=5.20,<7.0
+pandas>=2.0,<3.0
+requests>=2.31,<3.0
+python-dotenv>=1.0,<2.0
+# kaleido 0.2.x 在 Windows 上会挂死启动自带 Chromium，已由 report_export 的
+# 超时兜底替代静态导出；如需恢复 PNG 导出请安装 kaleido>=1.0 并配置 Chrome。
+Pillow>=10.0,<13.0
+reportlab>=4.0,<5.0

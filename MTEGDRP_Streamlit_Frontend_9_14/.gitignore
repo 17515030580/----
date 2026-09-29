@@ -1,0 +1,43 @@
+__pycache__/
+*.py[cod]
+.env
+.pytest_cache/
+frontend_data/history/*.json
+!frontend_data/history/.gitkeep
+app/.streamlit/secrets.toml
+
+# ---------- 云端部署新增（2026-09-17）----------
+# 虚拟环境：612 MB，绝对不能推到 GitHub
+.venv/
+venv/
+env/
+
+# 密钥与本地配置
+.env
+.env.local
+.env.*.local
+.streamlit/secrets.toml
+
+# 备份目录 / 备份文件（本地回滚用，不进仓库）
+.bak_*/
+*.bak
+*.bak_*
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 运行产物与日志
+outputs/
+*.log
+run_*.log
+pytest-cache-files-*/
+.coverage
+htmlcov/
+
+# 数据文件（体积大或运行时生成）
+*.pt
+*.pkl
+*.parquet

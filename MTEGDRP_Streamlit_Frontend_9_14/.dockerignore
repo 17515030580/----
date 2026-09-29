@@ -1,0 +1,39 @@
+# 构建上下文排除清单 —— 缺这个文件，612 MB 的 .venv 会被整个复制进镜像
+.venv/
+venv/
+env/
+
+# 密钥（镜像里绝不能有）
+.env
+.env.local
+.streamlit/secrets.toml
+
+# Git 与编辑器
+.git/
+.gitignore
+.idea/
+.vscode/
+
+# 备份
+.bak_*/
+*.bak
+*.bak_*
+
+# 缓存与运行产物
+__pycache__/
+*.py[cod]
+.pytest_cache/
+pytest-cache-files-*/
+outputs/
+*.log
+run_*.log
+
+# 本地仓库 zip 包
+*.zip
+
+# 测试（生产镜像不需要）
+tests/
+
+# 文档
+*.md
+!README.md
